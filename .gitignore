@@ -18,10 +18,7 @@ yarn-error.log*
 *.class
 *.jar
 
-database.db
 
-package-lock.json
 yarn.lock
 .pnpm-debug.log*
 .next/
-package.json
