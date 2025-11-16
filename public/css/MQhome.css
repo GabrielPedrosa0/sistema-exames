@@ -36,6 +36,10 @@
         background-size: cover;
     }
 
+    .img-MQhome{
+        display: none;
+    }
+
     .inf-user{
         background: white;
         display: flex;

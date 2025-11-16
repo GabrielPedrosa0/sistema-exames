@@ -16,22 +16,29 @@ a{
 
 .container{
     display: flex;
-    flex-direction: column;
     position: relative;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
 }
 
 .img-home{
-    display: block;
-    border-radius: 45px 45px 0 0 ;
+    display: none;
     width: 50%;
     height: 100%;
-    z-index: 100;
     background: url(../imagens/fc319095-70ad-40c0-b277-25d3e282b648.jpg) center center no-repeat;
+    background-size: cover;
+    
+}
+
+.img-MQhome{
+    position: absolute;
+    border-radius: 15px;
+    width: 95%;
+    height: 200px;
+    top: 5px;
+    background: url('../imagens/feliz_natal_MQ.png') center center no-repeat;
     background-size: cover;
 }
 
@@ -40,8 +47,8 @@ a{
     display: flex;
     flex-direction: column;
     padding: 8px;
-    width: 50%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     gap: 25px;
     justify-content: center;
     align-items: center;

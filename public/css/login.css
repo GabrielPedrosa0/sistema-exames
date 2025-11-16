@@ -15,12 +15,12 @@ body{
     position: relative;
     justify-content: center;
     align-items: center;
-    padding: 5px;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
 }
 
 .img-login{
+    display: none;
     border-radius: 45px 45px 0 0;
     width: 50%;
     height: 100%;
@@ -29,17 +29,30 @@ body{
     background-size: cover;
 }
 
+.img-MQlogin{
+    position: absolute;
+    border-radius: 15px;
+    width: 95%;
+    height: 200px;
+    top: 5px;
+    background: url('../imagens/feliz_natal_MQ.png') center center no-repeat;
+    background-size: cover;
+}
+
 .dados-user{
     background: white;
-    border-radius: 0 0 45px 45px;
     display: flex;
     flex-direction: column;
     padding: 8px;
-    width: 50%;
-    height: 100%;
     gap: 25px;
+    width: 100vw;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+.dados-user form{
+    width: 90%;
 }
 
 

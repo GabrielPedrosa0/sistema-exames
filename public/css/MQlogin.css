@@ -22,12 +22,17 @@
     }
 
     .img-login{
+        display: block;
         border-radius: 45px 0 0 45px;
         width: 50%;
         height: 100%;
         z-index: 10;
         background: url(../imagens/fc319095-70ad-40c0-b277-25d3e282b648.jpg) center center no-repeat;
         background-size: cover;
+    }
+
+    .img-MQlogin{
+        display: none;
     }
 
     .dados-user{
