@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href='../css/login.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="img-login"></div>
+        <div class="dados-user">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                <div class="input-box">
+                    <i class="ri-user-fill"></i>
+                    <input type="text" name="cpf" placeholder="CPF ou SUS" required>
+                </div>
+                    <br><br>
+                <div class="input-box">
+                    <i class="ri-lock-fill"></i>
+                    <input type="password" name="senha" placeholder="Senha (apenas admin)">
+                </div>
+                    <br><br>
+                <button type="submit">Entrar</button>
+        </form>
+        </div>
+        
+        <% if (erro) { %>
+            <p style="color:red;"><%= erro %></p>
+        <% } %>
+    </div>
+    
+</body>
+</html>

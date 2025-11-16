@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Status do Exame</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Exame: <%= exame.nome_exame %></h1>
+    <p>Paciente: <%= exame.paciente_nome %></p>
+    <p>Status: <strong><%= exame.status %></strong></p>
+
+    <% if (exame.status === 'pronto') { %>
+        <a href="<%= exame.resultado_url %>" target="_blank">Baixar Resultado</a>
+    <% } else { %>
+        <p>Volte mais tarde!</p>
+    <% } %>
+</body>
+</html>

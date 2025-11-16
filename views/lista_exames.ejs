@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exames de <%= paciente %></title>
+</head>
+<body>
+    <h1>Exames de <%= paciente %></h1>
+    <a href="/logout">Logout</a>
+    <table border="1" cellpadding="10" cellspacing="0" style="margin: 0 auto;">
+        <tr>
+            <th>Exame</th>
+            <th>Status</th>
+            <th>Resultado</th>
+        </tr>
+        <% exames.forEach(exame => { %>
+        <tr>
+            <td><%= exame.nome_exame %></td>
+            <td><%= exame.status %></td>
+            <td>
+                <% if (exame.status === 'pronto' && exame.resultado_url) { %>
+                    <a href="<%= exame.resultado_url %>" target="_blank">Baixar</a>
+                <% } else { %>
+                    Pendente
+                <% } %>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
