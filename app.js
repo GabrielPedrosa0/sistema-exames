@@ -65,7 +65,7 @@ app.get('/logout', (req, res) => {
 
 // ------------------ QR Code geral ------------------
 app.get('/qr', async (req, res) => {
-    const url = `https://seu-dominio.onrender.com/`;
+    const url = `postgresql://exames_user:H7QYoko2Hu2f2slL1tinIdOa4I3esHTl@dpg-d4d2m68gjchc73dntlo0-a.oregon-postgres.render.com/exames`;
     const qrDataURL = await QRCode.toDataURL(url);
     res.render('qr', { qrDataURL, url });
 });

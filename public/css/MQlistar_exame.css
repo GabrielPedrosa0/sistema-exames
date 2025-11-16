@@ -1,0 +1,39 @@
+@media screen and (min-width: 1200px){
+   @import url(normalaizer.css);
+
+    table {
+        width: 50vw;
+    }
+
+    table td{
+        padding: 5px;
+    }
+
+    .topo{
+        background: lightgray;
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        width: 100vw;
+    }
+
+    .topo button{
+        width: 150px;
+        font-size: 20px;
+        align-items: center;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .topo i{
+        font-size: 25px;
+    }
+
+    .topo a{
+        color: black;
+    } 
+}
+

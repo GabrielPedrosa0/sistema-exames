@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url(normalaizer.css);
 
 body{
     display: flex;
@@ -15,16 +11,17 @@ body{
 
 .container{
     display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: center;
     align-items: center;
     padding: 5px;
-    width: 80vw;
+    width: 100vw;
     height: 80vh;
 }
 
 .img-login{
-    border-radius: 45px 0 0 45px;
+    border-radius: 45px 45px 0 0;
     width: 50%;
     height: 100%;
     z-index: 10;
@@ -34,6 +31,7 @@ body{
 
 .dados-user{
     background: white;
+    border-radius: 0 0 45px 45px;
     display: flex;
     flex-direction: column;
     padding: 8px;
@@ -44,11 +42,6 @@ body{
     align-items: center;
 }
 
-.dados-user form {
-    padding: 10px;
-    height: 35%;
-    width: 80%;
-}
 
 .input-box{
     display: flex;

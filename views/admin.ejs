@@ -2,59 +2,89 @@
 <html>
 <head>
     <link rel="stylesheet" href='../css/adim.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <title>Painel do Administrador</title>
 </head>
 <body>
-    <head>
+
+    <div class="head">
+        <button>
+            <i class="ri-logout-box-fill"></i>
+            <a href="/logout">Logout</a>
+        </button>
+
         <h1>Painel do Administrador</h1>
-    </head>
+
+         
+    </div>
     
-    <a href="/logout">Logout</a>
+    
 
-    <h2>Adicionar novo exame</h2>
-    <form action="/admin" method="POST">
-        <input type="text" name="paciente_nome" placeholder="Nome do paciente" required><br><br>
-        <input type="text" name="cpf" placeholder="CPF ou SUS" required><br><br>
-        <input type="text" name="nome_exame" placeholder="Nome do exame" required><br><br>
-        <select name="status" required>
-            <option value="pendente">Pendente</option>
-            <option value="pronto">Pronto</option>
-        </select><br><br>
-        <input type="text" name="resultado_url" placeholder="URL do PDF (opcional)"><br><br>
-        <button type="submit">Adicionar Exame</button>
-    </form>
+    <div class="container">
 
-    <h2>Pacientes existentes</h2>
-    <% pacientes.forEach(paciente => { %>
-        <div style="border:1px solid #333; padding:10px; margin:10px; background:#f9f9f9;">
-            <strong><%= paciente.nome %></strong> - CPF: <%= paciente.cpf %>
-            
-            <ul>
-                <% if (paciente.exames.length > 0) { %>
-                    <% paciente.exames.forEach(exame => { %>
-                        <li>
-                            <%= exame.nome_exame %> - <%= exame.status %>
-                            <% if (exame.status === 'pendente') { %>
-                                <form action="/admin/marcar-pronto" method="POST" style="display:inline-block; margin-left:10px;">
-                                    <input type="hidden" name="exame_id" value="<%= exame.id %>">
-                                    <input type="text" name="resultado_url" placeholder="URL do PDF (opcional)">
-                                    <button type="submit">Marcar como Pronto</button>
-                                </form>
-                            <% } else if (exame.status === 'pronto' && exame.resultado_url) { %>
-                                - <a href="<%= exame.resultado_url %>" target="_blank">Ver PDF</a>
-                            <% } %>
-                        </li>
-                    <% }) %>
-                <% } else { %>
-                    <li>Sem exames cadastrados</li>
-                <% } %>
-            </ul>
+        <div class="add-exame">
+            <h2>Adicionar novo exame</h2>
+            <form action="/admin" method="POST">
+                <div class="input-box">
+                    <i class="ri-user-add-fill"></i>
+                    <input type="text" name="paciente_nome" placeholder="Nome do paciente" required>
+                </div>
 
-            <form action="/admin/remover" method="POST" onsubmit="return confirm('Deseja remover este paciente e todos os exames?');">
-                <input type="hidden" name="cpf" value="<%= paciente.cpf %>">
-                <button type="submit">Remover Paciente</button>
-            </form>
+                <div class="input-box">
+                    <i class="ri-id-card-fill"></i>
+                    <input type="text" name="cpf" placeholder="CPF ou SUS" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="ri-stethoscope-fill"></i>
+                    <input type="text" name="nome_exame" placeholder="Nome do exame" required>
+                </div>
+
+                <select name="status" required class="status">
+                    <option value="pendente">Pendente</option>
+                    <option value="pronto">Pronto</option>
+                </select> <br><br>
+
+                <div class="input-box">
+                    <i class="ri-link-m"></i>
+                    <input type="text" name="resultado_url" placeholder="URL do PDF (opcional)">
+                </div>
+                <button type="submit">Adicionar Exame</button>
+            </form>  
         </div>
-    <% }) %>
+
+        
+        <h2>Pacientes existentes</h2>
+        <% pacientes.forEach(paciente => { %>
+            <div style="border:1px solid #333; padding:10px; margin:10px; background:#f9f9f9;">
+                <strong><%= paciente.nome %></strong> - CPF: <%= paciente.cpf %>
+        
+                <ul>
+                    <% if (paciente.exames.length > 0) { %>
+                        <% paciente.exames.forEach(exame => { %>
+                            <li>
+                                <%= exame.nome_exame %> - <%= exame.status %>
+                                <% if (exame.status === 'pendente') { %>
+                                    <form action="/admin/marcar-pronto" method="POST" style="display:inline-block; margin-left:10px;">
+                                        <input type="hidden" name="exame_id" value="<%= exame.id %>">
+                                        <input type="text" name="resultado_url" placeholder="URL do PDF (opcional)">
+                                        <button type="submit">Marcar como Pronto</button>
+                                    </form>
+                                <% } else if (exame.status === 'pronto' && exame.resultado_url) { %>
+                                    - <a href="<%= exame.resultado_url %>" target="_blank">Ver PDF</a>
+                                <% } %>
+                            </li>
+                        <% }) %>
+                    <% } else { %>
+                        <li>Sem exames cadastrados</li>
+                    <% } %>
+                </ul>
+                <form action="/admin/remover" method="POST" onsubmit="return confirm('Deseja remover este paciente e todos os exames?');">
+                    <input type="hidden" name="cpf" value="<%= paciente.cpf %>">
+                    <button type="submit">Remover Paciente</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
 </body>
 </html>

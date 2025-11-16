@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href='../css/lista_exame.css'>
+    <link rel="stylesheet" href='../css/MQlistar_exame.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
     <title>Exames de <%= paciente %></title>
 </head>
 <body>
-    <h1>Exames de <%= paciente %></h1>
-    <a href="/logout">Logout</a>
+    <div class="topo">
+        <button>
+            <i class="ri-logout-box-fill"></i>
+            <a href="/logout">Desconectar</a>
+        </button>
+
+        <h1>Exames de <%= paciente %></h1>
+        
+    </div>
+    
     <table border="1" cellpadding="10" cellspacing="0" style="margin: 0 auto;">
         <tr>
             <th>Exame</th>

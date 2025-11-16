@@ -1,0 +1,64 @@
+@import url(normalaizer.css);
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head{
+    border: 2px solid red;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    width: 100vw;
+}
+
+.head button{
+    width: 150px;
+    font-size: 20px;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.head i{
+    font-size: 25px;
+}
+
+.container{
+    border: 2px solid blue;
+    border-radius: 45px;
+    padding: 10px;
+    gap: 5px;
+    width: 50vw;
+}
+
+
+.input-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 35px;
+    outline: none;
+    text-indent: 10px;
+}
+
+.input-box i{
+    margin: 5px;
+    font-size: 25px;
+}
+
+.add-exame .status{
+    width: 100px;
+    height: 35px;
+}
