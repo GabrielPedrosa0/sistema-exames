@@ -21,7 +21,7 @@ a{
     align-items: center;
     width: 100vw;
     height: 100vh;
-    font-size: 80px;
+    font-size: 20px;
 }
 
 .img-home{
@@ -57,7 +57,7 @@ a{
 
 .inf-user button{
     border-radius: 45px;
-    height: 60px;
+    height: auto;
     width: 50%;
     border: 2px solid rgba(66, 66, 66, 0.541);
     font-size: 35px;
